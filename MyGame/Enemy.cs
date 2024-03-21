@@ -17,6 +17,30 @@ namespace MyGame
             return name;
         }
 
+        // Getter da vida
+        public float GetHealth()
+        {
+            return health;
+        }
+
+        // Getter do shield
+        public float GetShield()
+        {
+            return shield;
+        }
+
+        // Setter do nome
+        public void SetName(string s)
+        {
+            string temp = "";
+
+            for (int i = 0; i<8; i++)
+            {
+                temp += s[i];
+            } 
+            name = temp;
+        }
+
         // Metodo para dar dano
         public void TakeDamage(float damage)
         {
@@ -33,7 +57,7 @@ namespace MyGame
         // Construtor
         public Enemy(string name)
         {
-            this.name = name;
+            SetName(name);
             health = 100;
             shield = 0;
         }
