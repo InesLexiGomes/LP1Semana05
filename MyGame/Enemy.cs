@@ -60,6 +60,21 @@ namespace MyGame
             }
         }
 
+        // Metodo para apanhar powerups
+        public void PickupPowerUp(PowerUp pwu, float fa)
+        {
+            if (pwu == PowerUp.Health)
+            {
+                health += fa;
+                if (health > 100) health = 100;
+            }
+            else if (pwu == PowerUp.Shield)
+            {
+                shield += fa;
+                if (shield > 100) shield = 100;
+            }
+        }
+
         // Construtor
         public Enemy(string name)
         {

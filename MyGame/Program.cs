@@ -20,6 +20,8 @@ namespace MyGame
 
             foreach (Enemy guy in enemyArray)
             {
+                guy.PickupPowerUp(PowerUp.Shield, 25);
+                guy.PickupPowerUp(PowerUp.Health, 25);
                 string name = guy.GetName();
                 float health = guy.GetHealth();
                 float shield = guy.GetShield();
