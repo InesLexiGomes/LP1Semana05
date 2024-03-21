@@ -33,11 +33,17 @@ namespace MyGame
         public void SetName(string s)
         {
             string temp = "";
-
-            for (int i = 0; i<8; i++)
+            if (s.Length > 8)
             {
-                temp += s[i];
-            } 
+                for (int i = 0; i<8; i++)
+                {
+                    temp += s[i];
+                } 
+            }
+            else
+            {
+                temp = s;
+            }
             name = temp;
         }
 
