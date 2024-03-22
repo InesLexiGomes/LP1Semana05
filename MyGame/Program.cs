@@ -20,6 +20,7 @@ namespace MyGame
 
             foreach (Enemy guy in enemyArray)
             {
+                guy.TakeDamage(50);
                 guy.PickupPowerUp(PowerUp.Shield, 25);
                 guy.PickupPowerUp(PowerUp.Health, 25);
                 string name = guy.GetName();
@@ -28,6 +29,10 @@ namespace MyGame
 
                 Console.WriteLine($"{name} {health} {shield}");
             }
+            
+            float pwpc = enemyArray[0].GetPowerUpCount();
+
+            Console.WriteLine(pwpc);
         }
     }
 }

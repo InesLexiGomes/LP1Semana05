@@ -7,9 +7,16 @@ namespace MyGame
 {
     public class Enemy
     {
+        static int powerUpCount;
         private string name;
         private float health;
         private float shield;
+
+        // Getter do powerUpCount
+        public float GetPowerUpCount()
+        {
+            return powerUpCount;
+        }
 
         // Getter de nome
         public string GetName()
@@ -63,6 +70,7 @@ namespace MyGame
         // Metodo para apanhar powerups
         public void PickupPowerUp(PowerUp pwu, float fa)
         {
+            powerUpCount++;
             if (pwu == PowerUp.Health)
             {
                 health += fa;
@@ -81,6 +89,10 @@ namespace MyGame
             SetName(name);
             health = 100;
             shield = 0;
+        }
+        static Enemy()
+        {
+            powerUpCount = 0;
         }
     }
 }
